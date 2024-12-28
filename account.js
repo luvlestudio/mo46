@@ -1,17 +1,21 @@
-const kakaoPayLink = [
+/** 신랑 카카오페이링크, 없으면 ''으로 둔다 */
+const kakaoPayGroomLink = [
   'https://qr.kakaopay.com/FFVtfAQQ7', // 1번째 계좌
-  'https://qr.kakaopay.com/FFVtfAQQ7-1', // 2번째 계좌
-  'https://qr.kakaopay.com/FFVtfAQQ7-2', // 3번째 계좌
-  'https://qr.kakaopay.com/FFVtfAQQ7-3', // 4번째 계좌
+  '', // 2번째 계좌
+];
+/** 신부 카카오페이링크, 없으면 ''으로 둔다  */
+const kakaoPayBrideLink = [
+  '', // 1번째 계좌
+  'https://qr.kakaopay.com/FFVtfAQQ7-3', // 2번째 계좌
 ]
 
 // 페이지 로드 시에 애니메이션 적용
 document.addEventListener("DOMContentLoaded", function () {
   const UlElements = document.querySelectorAll('.account-panel ul');
   const KakaoButtonList = [];
-  UlElements.forEach((UlElement, index) => {
+  UlElements.forEach((UlElement, ulIndex) => {
     const LiElements = UlElement.querySelectorAll('li');
-    LiElements.forEach(element => {
+    LiElements.forEach((element, liIndex) => {
       const copyTxt = element.querySelector('p').innerText;
       console.log(copyTxt, 'copyTxt');
       
@@ -21,9 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       const kakaoButton = element.querySelectorAll('button')[1];
-      kakaoButton.addEventListener('click', function () {
-        window.location.href = kakaoPayLink[index];
-      });
+      const kakaoPayLinkList = ulIndex === 0 ? kakaoPayGroomLink : kakaoPayBrideLink;
+      if (kakaoPayLinkList[liIndex]) {
+        kakaoButton.addEventListener('click', function () {
+          window.location.href = kakaoPayLinkList[liIndex];
+        });
+      } else {
+        kakaoButton.style.display = 'none';
+      }
     });
   });
 });
