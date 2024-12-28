@@ -1,7 +1,15 @@
+const kakaoPayLink = [
+  'https://qr.kakaopay.com/FFVtfAQQ7', // 1번째 계좌
+  'https://qr.kakaopay.com/FFVtfAQQ7-1', // 2번째 계좌
+  'https://qr.kakaopay.com/FFVtfAQQ7-2', // 3번째 계좌
+  'https://qr.kakaopay.com/FFVtfAQQ7-3', // 4번째 계좌
+]
+
 // 페이지 로드 시에 애니메이션 적용
 document.addEventListener("DOMContentLoaded", function () {
   const UlElements = document.querySelectorAll('.account-panel ul');
-  UlElements.forEach(UlElement => {
+  const KakaoButtonList = [];
+  UlElements.forEach((UlElement, index) => {
     const LiElements = UlElement.querySelectorAll('li');
     LiElements.forEach(element => {
       const copyTxt = element.querySelector('p').innerText;
@@ -10,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const copyButton = element.querySelectorAll('button')[0];
       copyButton.addEventListener('click', function () {
         copy(copyTxt);
+      });
+
+      const kakaoButton = element.querySelectorAll('button')[1];
+      kakaoButton.addEventListener('click', function () {
+        window.location.href = kakaoPayLink[index];
       });
     });
   });
