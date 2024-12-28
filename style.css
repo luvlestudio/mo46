@@ -406,7 +406,7 @@ main {
   align-items: center;
 }
 
-.panel {
+.account-panel {
   height: 0rem;
   background-color: white;
   overflow: hidden;
@@ -414,7 +414,7 @@ main {
   transition: 0.5s ease-out;
 }
 
-.panel ul li {
+.account-panel ul li {
   text-align: left;
   padding-bottom: 45px;
 }
