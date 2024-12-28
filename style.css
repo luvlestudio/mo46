@@ -7,8 +7,13 @@
 
 body {
   font-family: "GowunBatang-Regular", serif;
-  letter-spacing: -0.3px; 
+  letter-spacing: -0.3px;
   /* 고운바탕 폰트 적용 */
+}
+
+svg {
+  display: unset;
+  vertical-align: unset;
 }
 
 /* 재생 버튼 스타일 */
@@ -407,6 +412,11 @@ main {
   overflow: hidden;
   line-height: 2;
   transition: 0.5s ease-out;
+}
+
+.panel ul li {
+  text-align: left;
+  padding-bottom: 45px;
 }
 
 .maplink {
