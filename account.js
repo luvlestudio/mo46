@@ -1,12 +1,12 @@
 /** 신랑 카카오페이링크, 없으면 ''으로 둔다 */
 const kakaoPayGroomLink = [
-  'https://qr.kakaopay.com/FFVtfAQQ7', // 1번째 계좌
+  '', // 1번째 계좌
   '', // 2번째 계좌
 ];
 /** 신부 카카오페이링크, 없으면 ''으로 둔다  */
 const kakaoPayBrideLink = [
   '', // 1번째 계좌
-  'https://qr.kakaopay.com/FFVtfAQQ7-3', // 2번째 계좌
+  '', // 2번째 계좌
 ]
 
 // 페이지 로드 시에 애니메이션 적용
