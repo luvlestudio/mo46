@@ -48,7 +48,7 @@ window.onload = () => {
       content: {
         title: "김원민 ♥ 이지민의 모바일 청첩장",
         description: "2025년 3월 8일 토요일♡",
-        imageUrl: "https://i.imgur.com/xHvO6xO.png",
+        imageUrl: "https://i.imgur.com/Q2VoQr7.png",
         imageWidth: 1200,
         imageHeight: 630,
         link: {
